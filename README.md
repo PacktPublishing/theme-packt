@@ -1,5 +1,5 @@
-# GitBook Default Theme
+# Packt GitBook Theme
 
-This is the default theme for GitBook since version `3.0.0`. It can be used as a template for theming books or can be extended.
+This is a modified version of the default theme for GitBook since version `3.0.0`. It adds support for Packt-specific styling and layout modifications that enable Electron-based applications to use the statically generated output as-is without further modifications.
 
-![Image](https://raw.github.com/GitbookIO/theme-default/master/preview.png)
+![UI Example](demo.gif)
