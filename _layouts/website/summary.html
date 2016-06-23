@@ -1,5 +1,10 @@
 {% macro articles(_articles) %}
     {% for article in _articles %}
+        {% if article.title == "Introduction" %}
+        <li class="chapter {% if article.path == file.path and not article.anchor %}active{% endif %}" data-level="{{ article.level }}" {% if article.path %}data-path="{{ article.path|resolveFile }}"{% endif %}>
+          <a href="../index.html">About this Course</a>
+        </li>
+        {% else %}
         <li class="chapter {% if article.path == file.path and not article.anchor %}active{% endif %}" data-level="{{ article.level }}" {% if article.path %}data-path="{{ article.path|resolveFile }}"{% endif %}>
             {% if article.path and getPageByPath(article.path) %}
                 <a href="{{ article.path|resolveFile }}{{ article.anchor }}">
@@ -24,6 +29,7 @@
             </ul>
             {% endif %}
         </li>
+        {% endif %}
     {% endfor %}
 {% endmacro %}
 
@@ -54,8 +60,13 @@
     <li class="divider"></li>
 
     <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            {{ "GITBOOK_LINK"|t }}
+        <a href="https://www.packtpub.com/books/content/support/?utm_source=reader&utm_medium=sidebar&utm_campaign=hydrogen" target="blank" class="gitbook-link">
+            Download Course Files
+        </a>
+    </li>
+    <li>
+        <a href="https://packtpub.com/?utm_source=reader&utm_medium=sidebar&utm_campaign=hydrogen" target="blank" class="gitbook-link">
+            Published by Packt
         </a>
     </li>
 </ul>
